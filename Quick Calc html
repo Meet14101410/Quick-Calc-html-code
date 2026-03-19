@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quick Calc</title>
+</head>
+<body style="text-align:center; font-family:Arial;">
+
+  <h2>Quick Calc</h2>
+  <p id="question"></p>
+  <input type="number" id="answer">
+  <button onclick="check()">Submit</button>
+  <p id="result"></p>
+
+  <script>
+    let num1 = Math.floor(Math.random() * 10);
+    let num2 = Math.floor(Math.random() * 10);
+
+    document.getElementById("question").innerHTML =
+      num1 + " + " + num2 + " = ?";
+
+    function check() {
+      let userAns = document.getElementById("answer").value;
+      if (userAns == (num1 + num2)) {
+        document.getElementById("result").innerHTML = "✅ Correct!";
+      } else {
+        document.getElementById("result").innerHTML = "❌ Try Again!";
+      }
+    }
+  </script>
+
+</body>
+</html>
